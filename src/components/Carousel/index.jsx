@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useWindowSize from '../Hooks/useWindowSize';
+import useWindowSize from '../Hooks/useWindowSize.tsx';
 import StCarousel from './styled';
 import Tag from './Tag';
 
