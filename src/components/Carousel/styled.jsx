@@ -46,11 +46,12 @@ export const StCarousel = styled.section`
           }
           span.title {
             position: absolute;
-            background-color: #ffffff78;
+            background-color: #ffffff;
             color: #323232;
             border-radius: 100vmax;
             padding: 5px 10px;
             left: 0;
+            box-shadow: 1px 1px 5px #04677d64;
             text-align: center;
             right: 0;
             bottom: 20px;
@@ -140,4 +141,4 @@ export const StCarousel = styled.section`
   }
 `;
 
-export default StCarou
+export default StCarousel;

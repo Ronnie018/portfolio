@@ -2,28 +2,28 @@ const dispatchColor = (name) => {
   switch (name.toLowerCase()) {
     case 'python':
       return {
-        bg: '#269d56',
-        color: '#fff',
+        bg: '#2b5b84',
+        color: '#e4e4e4',
       };
     case 'javascript':
       return {
-        bg: '#FFD700',
+        bg: '##fcdc00',
         color: '#000',
       };
     case 'react':
       return {
-        bg: '#4259db',
+        bg: '#0074a6',
         color: '#fff',
       };
     case 'scss':
       return {
-        bg: '#00ff6e',
-        color: '#000',
+        bg: '#ca2485',
+        color: '#ffffff',
       };
     case 'tesseract':
       return {
-        bg: '#98a05d',
-        color: '#000',
+        bg: '#61c416',
+        color: '#fcffde',
       };
     case 'flask':
       return {
@@ -55,6 +55,27 @@ const dispatchColor = (name) => {
         bg: '#5e1e9d',
         color: '#ffffff',
       };
+    case 'typescript':
+      return {
+        bg: '#3178c6',
+        color: '#fff',
+      };
+    case 'tailwind':
+      return {
+        bg: '#1ab2d4',
+        color: '#fff',
+      };
+    case 'next':
+      return {
+        bg: '#ffffff',
+        color: '#000000',
+      };
+    case 'node':
+      return {
+        bg: '#026e00',
+        color: '#ffffff',
+      };
+
     default:
       return { bg: '#1ab2d4', color: '#000' };
   }
