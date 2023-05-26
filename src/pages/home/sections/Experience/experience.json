@@ -1,0 +1,40 @@
+{
+  "timeline": [
+    {
+      "year": "2018",
+      "items": ["Item 1"]
+    },
+    {
+      "year": "2020",
+      "items": [
+        "Item 2",
+        "Item 3",
+        "Testing with",
+        "Second try with text bigger",
+        "Item 3",
+        "Item 3"
+      ]
+    },
+    {
+      "year": "2022",
+      "items": [
+        "Item 2",
+        "Item 3",
+        "Testing with",
+        "Second try with text biggesssssss",
+        "Item 3",
+        "Item 3"
+      ]
+    }
+  ],
+  "certifications": [
+    "FullStack Web Development",
+    "Blockchain",
+    "DevOps and Agile Culture",
+    "Design Thinking",
+    "Leadership and Communication",
+    "User Experience",
+    "Python for Data Analisis",
+    "Cybersecurity"
+  ]
+}
