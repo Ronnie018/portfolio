@@ -72,7 +72,7 @@ const Carousel = ({ items, setCentered }) => {
                     <span className='title'>{title}</span>
                     <div className='tags'>
                       {tags.map((tag) => (
-                        <Tag>{tag}</Tag>
+                        <Tag key={tag}>{tag}</Tag>
                       ))}
                     </div>
                   </a>
