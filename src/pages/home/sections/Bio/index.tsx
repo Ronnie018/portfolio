@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import StBio from './styled';
 import { useRef } from 'react';
-import useIntersection from '../../../../Hooks/useIntersection';
+import useIntersection from '../../../../components/Hooks/useIntersection';
 
 const Bio = () => {
   const self = useRef();

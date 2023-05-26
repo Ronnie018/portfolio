@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react';
 import EffectCallback from './EffectCallbackRunner';
 
-type ReactRef = {
-  current: HTMLElement;
-};
-
 export default function useIntersection(
-  element: ReactRef,
+  element: React.MutableRefObject<any>,
   rate: number,
   callback = (elm: HTMLElement) => {}
 ): boolean {
-
   const [isIntersecting, setIsIntersecting] = useState(false);
   const effectCleaner = new EffectCallback();
 

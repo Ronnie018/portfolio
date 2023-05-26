@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { EventHandler, useState } from 'react';
 import StNavbar from './styled';
 import HamburguerMenu from '../../../../components/rcs_icons/HamburguerMenu';
 
-const Navbar = (props) => {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navitems = ['WhoIam', 'Skills', 'What i do', 'Portfolio', 'Contact'];
+
   return (
     <StNavbar>
       <div className='container'>
@@ -14,12 +15,12 @@ const Navbar = (props) => {
           aria-roledescription='hamburger menu button'
           aria-label='button to open menu'
           size={46}
-          onClick={(e) => {
+          onClick={() => {
             setMenuOpen(!menuOpen);
           }}
         />
         <div className='logo-container'>
-          <Link>Rondineli Brito</Link>
+          <Link to='/'>Rondineli Brito</Link>
         </div>
         <nav className={menuOpen ? 'show' : ''}>
           <ul>

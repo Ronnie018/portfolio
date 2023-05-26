@@ -1,14 +1,16 @@
 import { useState, useRef } from 'react';
 import StExperience from './styled';
+import useIntersection from '../../../../components/Hooks/useIntersection';
 import Timeline from '../../../../components/Timeline';
 import data from './experience.json';
-import useIntersection from '../../../../Hooks/useIntersection';
 
 const Experience = () => {
   const self = useRef();
+
   const intersecting = useIntersection(self, 1, () => {
-    console.log('testing');
+    // console.log('testing');
   });
+
   const [item, setItem] = useState(null);
   const { timeline, certifications } = data;
 

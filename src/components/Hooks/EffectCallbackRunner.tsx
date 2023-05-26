@@ -15,8 +15,8 @@ export default class EffectCallback implements EffectCallbackProps {
       callback();
       this.running = false;
     } catch (e) {
-      console.log(e.message);
       this.running = false;
     }
   }
 }
+

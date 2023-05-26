@@ -86,8 +86,8 @@ import {
 
 import { SiTypescript, SiRedux, SiExpress } from 'react-icons/all';
 
-const Skill = ({ children, color, setDescription }) => {
-  const enumeratedIcons = {
+const Skill = ({ children, color, setDescription }: { children: string; color: string; setDescription: any }) => {
+  const enumeratedIcons: any = {
     HTML: FaHtml5,
     CSS: FaCss3Alt,
     JavaScript: FaJsSquare,
@@ -106,7 +106,7 @@ const Skill = ({ children, color, setDescription }) => {
     Flask: FaFlask,
   };
 
-  const enumeratedText = {
+  const enumeratedText: any = {
     HTML: "Accessible and semantic code wouldn't be possible without this",
     CSS: 'Everybody loves CSS, with it we can be limitlessly creative with our ideas.',
     JavaScript:

@@ -4,10 +4,10 @@ import Avatar from './avatar';
 import StHero, { StContent } from './styled';
 
 const Hero = () => {
-  const defs = useRef();
+  const defs = useRef(null);
   let count = 0;
   function animate() {
-    const list = defs?.current?.children;
+    const list: any = (defs?.current as HTMLElement | null)?.children;
 
     if (list) {
       try {
@@ -19,13 +19,14 @@ const Hero = () => {
           return count++;
         }
         return (count = 0);
-      } catch (e) {
+      } catch (e: Error | any) {
         console.log(e.message);
       }
     }
   }
 
   let running = false;
+
   setInterval(() => {
     if (running) return;
     running = true;

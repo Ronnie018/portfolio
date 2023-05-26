@@ -69,7 +69,9 @@ const StSkills = styled.div`
       transform: translateX(25px);
     }
     100% {
-      transform: translateX(-${(props) => (props.width ? props.width : 0)}px);
+      transform: translateX(
+        -${({ width }: { width: number }) => (width ? width : 0)}px
+      );
     }
   }
 

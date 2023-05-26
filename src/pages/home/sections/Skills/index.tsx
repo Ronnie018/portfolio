@@ -3,7 +3,7 @@ import Skill from './Skill';
 import { useEffect, useRef, useState } from 'react';
 
 const Skills = () => {
-  const skillsElm = useRef();
+  const skillsElm = useRef(null);
   const [width, setWidth] = useState(0);
   const [description, setDescription] = useState();
   const skills = [
@@ -28,8 +28,11 @@ const Skills = () => {
   useEffect(() => {
     if (running) return;
     running = true;
+
     const width =
-      skillsElm?.current?.scrollWidth - skillsElm?.current?.clientWidth + 25;
+      (skillsElm?.current as HTMLElement | any)?.scrollWidth -
+      (skillsElm?.current as HTMLElement | any)?.clientWidth +
+      25;
     width && setWidth(width);
   }, []);
 

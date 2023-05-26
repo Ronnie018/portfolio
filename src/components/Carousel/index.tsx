@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import useWindowSize from '../Hooks/useWindowSize.tsx';
-import StCarousel from './styled';
-import Tag from './Tag';
+import { Key, useState } from 'react';
+import useWindowSize from '../Hooks/useWindowSize.jsx';
+import StCarousel from './styled.jsx';
+import Tag from './Tag.jsx';
 
-const Carousel = ({ items, setCentered }) => {
+const Carousel = ({ items, setCentered }: any) => {
   const { width } = useWindowSize();
   let moveRate = 364;
   let correction = width ? (width > 1060 ? 1 : 0) : 0;
@@ -45,39 +45,40 @@ const Carousel = ({ items, setCentered }) => {
             style={{ transform: `translateX(${translateValue}px)` }}
           >
             {items &&
-              items.map(({ path, filename, title, url, tags }, i) => {
-                const filepath =
-                  path +
-                  (width
-                    ? width < 950
-                      ? 'MD_' + filename
-                      : 'LG_' + filename
-                    : 'MD_' + filename);
-                return (
-                  <a
-                    className='item'
-                    key={i}
-                    onPointerOver={() => {
-                      setCentered(() => title);
-                    }}
-                    href={url}
-                    target='_blank'
-                  >
-                    <div
-                      className='img-wrapper'
-                      style={{
-                        backgroundImage: `url(${filepath})`,
+              items.map(
+                ({ path, filename, title, url, tags }: ItemProps, i: Key) => {
+                  const filepath = getImageBySize(
+                    path,
+                    filename,
+                    width as number
+                  );
+
+                  return (
+                    <a
+                      className='item'
+                      key={i}
+                      onPointerOver={() => {
+                        setCentered(() => title);
                       }}
-                    />
-                    <span className='title'>{title}</span>
-                    <div className='tags'>
-                      {tags.map((tag) => (
-                        <Tag key={tag}>{tag}</Tag>
-                      ))}
-                    </div>
-                  </a>
-                );
-              })}
+                      href={url}
+                      target='_blank'
+                    >
+                      <div
+                        className='img-wrapper'
+                        style={{
+                          backgroundImage: `url(${filepath})`,
+                        }}
+                      />
+                      <span className='title'>{title}</span>
+                      <div className='tags'>
+                        {tags.map((tag) => (
+                          <Tag key={tag}>{tag}</Tag>
+                        ))}
+                      </div>
+                    </a>
+                  );
+                }
+              )}
           </div>
         </div>
         <div className='navegation' />
@@ -89,9 +90,21 @@ const Carousel = ({ items, setCentered }) => {
 
 export default Carousel;
 
-/*
+function getImageBySize(path: string, filename: string, width: number) {
+  return (
+    path +
+    (width
+      ? width < 950
+        ? 'MD_' + filename
+        : 'LG_' + filename
+      : 'MD_' + filename)
+  );
+}
+
+type ItemProps = {
   path: string;
   filename: string;
   title: string;
   url: string;
-*/
+  tags: string[];
+};

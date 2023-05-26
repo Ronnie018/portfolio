@@ -5,7 +5,7 @@ import Experience from './sections/Experience';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
-import Footer from './Footer';
+import Footer from '../../components/Footer';
 
 const StHome = styled.div``;
 

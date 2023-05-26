@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import StTimeline from './styled';
 
-const Timeline = ({ data, color, setToolTip }) => {
+const Timeline = ({
+  data,
+  color,
+  setToolTip,
+}: {
+  data: ItemProps[];
+  color: string;
+  setToolTip: Function;
+}) => {
   return (
     <StTimeline color={color}>
       <div>
@@ -39,3 +47,8 @@ const Timeline = ({ data, color, setToolTip }) => {
 };
 
 export default Timeline;
+
+type ItemProps = {
+  year: string;
+  items: string[];
+};

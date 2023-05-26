@@ -1,5 +1,5 @@
 import StProjects from './styled';
-import Carousel from '../../../../components/Carousel/index.jsx';
+import Carousel from '../../../../components/Carousel/index';
 import { useState } from 'react';
 
 const Projects = () => {

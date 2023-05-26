@@ -1,4 +1,6 @@
-const dispatchColor = (name) => {
+import { ReactNode } from 'react';
+
+const dispatchColor = (name: string) => {
   switch (name.toLowerCase()) {
     case 'python':
       return {
@@ -81,7 +83,7 @@ const dispatchColor = (name) => {
   }
 };
 
-const Tag = ({ children }) => {
+const Tag = ({ children }: any) => {
   const { bg, color } = dispatchColor(children);
   return <span style={{ backgroundColor: bg, color: color }}>{children}</span>;
 };
