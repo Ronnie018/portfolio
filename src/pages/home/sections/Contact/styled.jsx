@@ -7,8 +7,12 @@ const StContact = styled.div`
 
   font-family: 'Inter', sans-serif;
 
-  .container {
+  *::selection {
+    background-color: #007792;
+    color: white;
+  }
 
+  .container {
     min-height: 86vh;
     background-color: #101010;
     display: grid;

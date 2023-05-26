@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import StContact from './styled';
-import ContactForm from '../ContactForm';
+import ContactForm from '../../../../components/ContactForm';
 
 export default function Contact() {
   return (

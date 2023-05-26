@@ -7,7 +7,7 @@ const dispatchColor = (name) => {
       };
     case 'javascript':
       return {
-        bg: '##fcdc00',
+        bg: '#fcdc00',
         color: '#000',
       };
     case 'react':

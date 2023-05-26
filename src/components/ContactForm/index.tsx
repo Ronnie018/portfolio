@@ -1,4 +1,4 @@
-import EmailSender from '../../../../utils/emailSender';
+import EmailSender from '../../utils/emailSender';
 import EmailForm from './styled';
 import { useRef, FormEvent } from 'react';
 

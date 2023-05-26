@@ -5,6 +5,7 @@ export const StCarousel = styled.section`
     transition: 400ms cubic-bezier(0.175, 0.885, 0.32, 1);
     user-select: none;
   }
+
   position: relative;
   width: 1168px;
   max-width: 98vw;
@@ -87,7 +88,7 @@ export const StCarousel = styled.section`
   }
 
   .move-button {
-    width: 16px;
+    width: 1rem;
     height: 80px;
     background-color: #1ab2d4;
     border-radius: 100vmax;
@@ -101,8 +102,16 @@ export const StCarousel = styled.section`
     &.right {
       right: 0;
     }
+    &:hover {
+      transform: translateY(-52%) scale(1.06, 1.01);
+      cursor: pointer;
+      background-color: #34bcd4;
+    }
+    &:active {
+      transform: translateY(-49%);
+    }
   }
-  
+
   .navegation {
     position: absolute;
     color: #1ab2d4;

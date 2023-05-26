@@ -54,6 +54,20 @@ const EmailForm = styled.form`
     font-weight: 600;
     color: white;
     margin: 0 auto;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #0789a7;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0px 2px 0 #078aa742;
+    }
+    &:active{
+      transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 80ms;
+      transform: translateY(1px);
+      box-shadow: none;
+      background-color: #026176;
+    }
   }
 `;
 
