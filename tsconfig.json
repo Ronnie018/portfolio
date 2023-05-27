@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Carousel/methods.jsx", "src/components/Carousel/styled.jsx", "src/components/ContactForm/styled.jsx", "src/pages/home/sections/Skills/styled.tsx"],
   "exclude": ["node_modules"]

@@ -41,6 +41,13 @@ const Projects = () => {
       url: 'https://github.com/Ronnie018/ocr',
       tags: ['Python', 'Tesseract', 'Flask'],
     },
+    {
+      path: '/images/projects/',
+      filename: 'e_art.png',
+      title: 'E Art Virtual Art Gallery',
+      url: 'https://e-art-project.vercel.app/',
+      tags: ['Next', 'Tailwind', 'Javascript'],
+    },
   ];
 
   return (
