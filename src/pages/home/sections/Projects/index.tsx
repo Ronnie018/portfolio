@@ -12,6 +12,8 @@ const Projects = () => {
       title: 'React Online Music Player',
       url: 'https://github.com/Ronnie018/together-reactPlayer',
       tags: ['React', 'JavaScript', 'Gun'],
+      done: false,
+      type: 'repo',
     },
     {
       path: '/images/projects/',
@@ -19,6 +21,8 @@ const Projects = () => {
       title: 'Ruby Fullstack Blog App',
       url: 'https://github.com/Ronnie018/ROR-mvc-getting-started',
       tags: ['MySQL', 'Bootstrap', 'Ruby on Rails'],
+      done: true,
+      type: 'repo',
     },
     {
       path: '/images/projects/',
@@ -26,13 +30,17 @@ const Projects = () => {
       title: 'NLW Spacetime',
       url: 'https://github.com/Ronnie018/NLW-spacetime-webClient',
       tags: ['Next', 'Node', 'Typescript', 'MySQL', 'Tailwind'],
+      done: false,
+      type: 'repo',
     },
     {
       path: '/images/projects/',
       filename: 'roberta_portfolio.png',
-      title: 'Astro Illustration and Design portfolio',
+      title: 'Design portfolio',
       url: 'https://robertaandrade.github.io/portfolio-design/',
       tags: ['React', 'SCSS', 'Astro'],
+      done: true,
+      type: 'web',
     },
     {
       path: '/images/projects/',
@@ -40,6 +48,8 @@ const Projects = () => {
       title: 'Pyhon OCR Invoice Analyzer',
       url: 'https://github.com/Ronnie018/ocr',
       tags: ['Python', 'Tesseract', 'Flask'],
+      done: true,
+      type: 'repo',
     },
     {
       path: '/images/projects/',
@@ -47,6 +57,8 @@ const Projects = () => {
       title: 'E Art Virtual Art Gallery',
       url: 'https://e-art-project.vercel.app/',
       tags: ['Next', 'Tailwind', 'Javascript'],
+      done: false,
+      type: 'web',
     },
   ];
 

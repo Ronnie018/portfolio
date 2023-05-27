@@ -46,7 +46,10 @@ const Carousel = ({ items, setCentered }: any) => {
           >
             {items &&
               items.map(
-                ({ path, filename, title, url, tags }: ItemProps, i: Key) => {
+                (
+                  { path, filename, title, url, tags, done, type }: ItemProps,
+                  i: Key
+                ) => {
                   const filepath = getImageBySize(
                     path,
                     filename,
@@ -70,6 +73,18 @@ const Carousel = ({ items, setCentered }: any) => {
                         }}
                       />
                       <span className='title'>{title}</span>
+                      <div className='status'>
+                        {done ? (
+                          <img src='/images/svgs/open.svg' width={30} />
+                        ) : (
+                          <img src='/images/svgs/close.svg' width={30} />
+                        )}
+                        {type === 'repo' ? (
+                          <img src='/images/svgs/repo.svg' width={30} />
+                        ) : (
+                          <img src='/images/svgs/web.svg' width={30} />
+                        )}
+                      </div>
                       <div className='tags'>
                         {tags.map((tag) => (
                           <Tag key={tag}>{tag}</Tag>
@@ -107,4 +122,6 @@ type ItemProps = {
   title: string;
   url: string;
   tags: string[];
+  done: boolean;
+  type: string;
 };

@@ -59,13 +59,21 @@ export const StCarousel = styled.section`
             margin: auto;
             max-width: 250px;
           }
+          .status {
+            display: flex;
+            position: absolute;
+            top: 1rem;
+            left: 0;
+            left: 1rem;
+            gap: .6rem;
+          }
           .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem;
             position: absolute;
             background-color: #32323269;
-            top: 1rem;
+            top: 4rem;
             left: 0;
             right: 0;
             margin: 0 auto;
