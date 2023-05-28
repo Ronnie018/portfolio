@@ -1,11 +1,8 @@
-import { useEffect } from 'react';
 import StBio from './styled';
 import { useRef } from 'react';
-import useIntersection from '../../../../components/Hooks/useIntersection';
 
 const Bio = () => {
-  const self = useRef();
-  // const intersecting = useIntersection(self, 1);
+  const self = useRef(null);
   const intersecting = true;
 
   return (
@@ -24,13 +21,12 @@ const Bio = () => {
           <div className='right'>
             <span className='decor decor-top' />
             <div className='bio'>
-              “Sit iure sapiente aut aliquid corporis qui quas eaque et dicta
-              odit et molestias placeat ex culpa fugit est quidem quidem? Ut
-              internos sint eos aliquid sapiente ut reiciendis itaque. Est alias
-              facilis qui sunt omnis in possimus ipsam in quia delectus? Quo
-              iste corporis aut similique commodi est facilis sint ab dolor
-              autem sed modi autem vel rerum doloremque et recusandae
-              aspernatur.”
+              “Creativity shouldn't be ceased by a Stack or a specific
+              technology, solutions can came from any source and everyone should
+              be prepared to learn from those sources. Everything we learn will
+              be usefull at some point, have a passion for knowledge and you
+              will never regret learning something new, even if it has nothing
+              to do with your field of knowledge.”
             </div>
             <span className='decor decor-bottom' />
           </div>
