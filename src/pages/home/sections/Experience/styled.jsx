@@ -58,6 +58,7 @@ const StExperience = styled.div`
 
     .timeline-container {
       max-width: 100%;
+      max-height: 100vh;
     }
 
     .certs-container {
