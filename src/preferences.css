@@ -1,0 +1,8 @@
+@media (prefers-reduced-motion: reduce) {
+  /* Add your styles for reduced motion here */
+  * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+    transform: none !important;
+  }
+}
