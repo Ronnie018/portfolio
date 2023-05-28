@@ -5,7 +5,7 @@ import Timeline from '../../../../components/Timeline';
 import data from './experience.json';
 
 const Experience = () => {
-  const self = useRef();
+  const self = useRef(null);
 
   const intersecting = useIntersection(self, 1, () => {
     // console.log('testing');
