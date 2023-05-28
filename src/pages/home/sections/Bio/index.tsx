@@ -23,7 +23,7 @@ const Bio = () => {
             <div className='bio'>
               “Creativity shouldn't be ceased by a Stack or a specific
               technology, solutions can came from any source and everyone should
-              be prepared to learn from those sources. Everything we learn will
+              be prepared to learn from anywhere. Everything we learn will
               be usefull at some point, have a passion for knowledge and you
               will never regret learning something new, even if it has nothing
               to do with your field of knowledge.”
