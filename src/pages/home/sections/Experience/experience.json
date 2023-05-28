@@ -1,32 +1,46 @@
 {
   "timeline": [
     {
-      "year": "2018",
-      "items": ["Item 1"]
-    },
-    {
       "year": "2020",
       "items": [
-        "Item 2",
-        "Item 3",
-        "Testing with",
-        "Second try with text bigger",
-        "Item 3",
-        "Item 3"
+        "Python",
+        "OpenpyXl, SQL and Flask API's",
+        "PyQT5a and Pandas",
+        "Django, HTML, CSS and Boostrap"
+      ]
+    },
+    {
+      "year": "2021",
+      "items": [
+        "Git and Github",
+        "Pandas update and MatPlotLib PowerBi PowerQuery-M and DAX",
+        "Javascript, Node Express.js and Node frameworks",
+        "Linux and Docker",
+        "Sequelize, "
       ]
     },
     {
       "year": "2022",
       "items": [
-        "Item 2",
-        "Item 3",
-        "Testing with",
-        "Second try with text biggesssssss",
-        "Item 3",
-        "Item 3"
+        "basic PHP and Composer",
+        "Responsive web, web design and Figma",
+        "Typescript, React and Redux",
+        "Browser extensions(ManifestV3)",
+        "MongoDB, Mongoose, MERN stack",
+        "Systems development degree start"
+      ]
+    },
+    {
+      "year": "2023",
+      "items": [
+        "Ruby and Ruby-On-Rails",
+        "Jest GraphCMS GraphQL",
+        "Tailwind, React update and Next.js",
+        "Angular"
       ]
     }
   ],
+
   "certifications": [
     "FullStack Web Development",
     "Blockchain",
