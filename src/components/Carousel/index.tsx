@@ -1,9 +1,19 @@
-import { Key, useState } from 'react';
-import useWindowSize from '../Hooks/useWindowSize.jsx';
 import StCarousel from './styled.jsx';
-import Tag from './Tag.jsx';
 
-const Carousel = ({ items, setCentered }: any) => {
+import { useState, Key } from 'react';
+import { ItemProps } from './CarouselHandler';
+
+import CarouselHandler from './CarouselHandler';
+import useWindowSize from '../Hooks/useWindowSize.jsx';
+import Tag from './Tag.jsx';
+import getImageBySize from '../../utils/getImageBySize';
+
+type CarouselProps = {
+  items: ItemProps[];
+  setCentered: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const Carousel = ({ items, setCentered }: CarouselProps) => {
   const { width } = useWindowSize();
   let moveRate = 364;
   let correction = width ? (width > 1060 ? 1 : 0) : 0;
@@ -11,117 +21,93 @@ const Carousel = ({ items, setCentered }: any) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [translateValue, setTranslateValue] = useState(0);
 
-  const moveLeft = () => {
-    if (currentIndex === 0) {
-      setCurrentIndex(items.length - 1);
-      setTranslateValue(-(items.length - 1) * moveRate);
-      setCentered(() => items[items.length - (1 - correction)]?.title);
-    } else {
-      setCurrentIndex(currentIndex - 1);
-      setTranslateValue(translateValue + moveRate);
-      setCentered(() => items[currentIndex - (2 - correction)]?.title);
-    }
-  };
+  const carouselHandler = new CarouselHandler({
+    currentIndex,
+    setCurrentIndex,
+    translateValue,
+    setTranslateValue,
+    setCentered,
+    items,
+    correction,
+    moveRate,
+  });
 
-  const moveRight = () => {
-    if (currentIndex === items.length - 1) {
-      setCurrentIndex(0);
-      setTranslateValue(0);
-      setCentered(() => items[0 + correction]?.title);
-    } else {
-      setCurrentIndex(currentIndex + 1);
-      setTranslateValue(translateValue - moveRate);
-      setCentered(() => items[currentIndex + (1 + correction)]?.title);
-    }
-  };
+  const handleMoveRight = () => carouselHandler.moveRight();
+  const handleMoveLeft = () => carouselHandler.moveLeft();
 
   return (
     <StCarousel>
-      <div className='move-button left' onClick={moveLeft} />
+      <div className='move-button left' onClick={handleMoveLeft} />
       <div className='container'>
         <div className='carousel'>
           <div
             className='items'
             style={{ transform: `translateX(${translateValue}px)` }}
           >
-            {items &&
-              items.map(
-                (
-                  { path, filename, title, url, tags, done, type }: ItemProps,
-                  i: Key
-                ) => {
-                  const filepath = getImageBySize(
-                    path,
-                    filename,
-                    width as number
-                  );
-
-                  return (
-                    <a
-                      className='item'
-                      key={i}
-                      onPointerOver={() => {
-                        setCentered(() => title);
-                      }}
-                      href={url}
-                      target='_blank'
-                    >
-                      <div
-                        className='img-wrapper'
-                        style={{
-                          backgroundImage: `url(${filepath})`,
-                        }}
-                      />
-                      <span className='title'>{title}</span>
-                      <div className='status'>
-                        {done ? (
-                          <img src='/images/svgs/open.svg' width={30} />
-                        ) : (
-                          <img src='/images/svgs/close.svg' width={30} />
-                        )}
-                        {type === 'repo' ? (
-                          <img src='/images/svgs/repo.svg' width={30} />
-                        ) : (
-                          <img src='/images/svgs/web.svg' width={30} />
-                        )}
-                      </div>
-                      <div className='tags'>
-                        {tags.map((tag) => (
-                          <Tag key={tag}>{tag}</Tag>
-                        ))}
-                      </div>
-                    </a>
-                  );
-                }
-              )}
+            {renderItems(items, width as number, setCentered)}
           </div>
         </div>
         <div className='navegation' />
       </div>
-      <div className='move-button right' onClick={moveRight} />
+      <div className='move-button right' onClick={handleMoveRight} />
     </StCarousel>
   );
 };
 
 export default Carousel;
 
-function getImageBySize(path: string, filename: string, width: number) {
-  return (
-    path +
-    (width
-      ? width < 950
-        ? 'MD_' + filename
-        : 'LG_' + filename
-      : 'MD_' + filename)
+function renderItems(
+  items: any,
+  width: number,
+  setCentered: React.Dispatch<React.SetStateAction<string>>
+) {
+  if (!items) return null;
+  return items.map(
+    ({ path, filename, title, url, tags, done, type }: ItemProps, i: Key) => {
+      const filepath = getImageBySize(path, filename, width);
+
+      const imageStyle = {
+        backgroundImage: `url(${filepath})`,
+      };
+
+      return (
+        <a
+          className='item'
+          key={i}
+          onPointerOver={() => setCentered(title)}
+          href={url}
+          target='_blank'
+        >
+          <div className='img-wrapper' style={imageStyle} />
+          <span className='title'>{title}</span>
+          <div className='status'>
+            {setStatus(done)}
+            {setType(type)}
+          </div>
+          <div className='tags'>{renderTags(tags)}</div>
+        </a>
+      );
+    }
   );
 }
 
-type ItemProps = {
-  path: string;
-  filename: string;
-  title: string;
-  url: string;
-  tags: string[];
-  done: boolean;
-  type: string;
-};
+function renderTags(tags: string[]) {
+  if (!tags) return null;
+  return tags.map((tag) => <Tag key={tag} children={tag} />);
+}
+
+function setStatus(done: boolean = false) {
+  return done ? (
+    <img src='/images/svgs/open.svg' width={30} />
+  ) : (
+    <img src='/images/svgs/close.svg' width={30} />
+  );
+}
+
+function setType(type: string) {
+  return type === 'repo' ? (
+    <img src='/images/svgs/repo.svg' width={30} />
+  ) : (
+    <img src='/images/svgs/web.svg' width={30} />
+  );
+}
