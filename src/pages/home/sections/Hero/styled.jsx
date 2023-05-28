@@ -143,7 +143,6 @@ export const StContent = styled.div`
             background-color: black;
             color: #1e7d92;
             animation: 100ms colorchange;
-            transform: scale(0.99);
           }
         }
       }
