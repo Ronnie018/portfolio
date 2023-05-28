@@ -1,6 +1,7 @@
 import EmailSender from '../../utils/emailSender';
 import EmailForm from './styled';
 import { useRef, FormEvent } from 'react';
+import { EmailValidationError } from './types';
 
 const ContactForm = () => {
   const email = useRef<HTMLInputElement>(null);
@@ -17,7 +18,7 @@ const ContactForm = () => {
       );
 
       emailSender.validate().sendEmail();
-    } catch (e: Error | any) {
+    } catch (e: EmailValidationError | any) {
       window.alert(e.message);
     }
   }

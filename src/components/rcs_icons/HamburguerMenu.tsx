@@ -7,14 +7,7 @@ const HamburguerMenu = ({
   lines = '#C8C8C8',
   line_width = 2,
   className,
-}: {
-  onClick: MouseEventHandler<HTMLDivElement>;
-  size: number;
-  color?: string;
-  lines?: string;
-  line_width?: number;
-  className?: string;
-}) => {
+}: HamburguerMenuProps) => {
   return (
     <div onClick={onClick} className={className}>
       <svg
@@ -52,3 +45,12 @@ const HamburguerMenu = ({
 };
 
 export default HamburguerMenu;
+
+interface HamburguerMenuProps {
+  onClick: MouseEventHandler<HTMLDivElement>;
+  size: number;
+  color?: string;
+  lines?: string;
+  line_width?: number;
+  className?: string;
+}

@@ -1,54 +1,43 @@
-import React, { useState } from 'react';
 import StTimeline from './styled';
+import { TimelineItem, TimelineProps } from './types';
+import partialFrom from '../../utils/getPartialText';
 
-const Timeline = ({
-  data,
-  color,
-  setToolTip,
-}: {
-  data: ItemProps[];
-  color: string;
-  setToolTip: Function;
-}) => {
+const renderTimelineItems = (
+  { year, items }: TimelineItem,
+  setToolTip: Function
+) => {
   return (
-    <StTimeline color={color}>
-      <div>
-        {data.map(({ year, items }) => {
+    <div className='period-container' key={year}>
+      <div className='period'>{year}</div>
+      <div className='timeline' />
+      <div className='items'>
+        {items.map((text, i) => {
           return (
-            <div className='period-container' key={year}>
-              <div className='period'>{year}</div>
-              <div className='timeline'></div>
-              <div className='items'>
-                {items.map((item, i) => {
-                  const value =
-                    item.length > 10 ? item.slice(0, 10).trim() + '...' : item;
-                  return (
-                    <div className='item' key={year + '-' + i}>
-                      <span
-                        onMouseOver={(e) => {
-                          setToolTip(() => year + ' - ' + item);
-                        }}
-                        onMouseOut={(e) => {
-                          setToolTip(() => null);
-                        }}
-                      >
-                        {value}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
+            <div className='item' key={year + '-' + i}>
+              <span
+                onMouseOver={() => setToolTip(year + ' - ' + text)}
+                onMouseOut={() => setToolTip(null)}
+              >
+                {partialFrom(text)}
+              </span>
             </div>
           );
         })}
+      </div>
+    </div>
+  );
+};
+
+const Timeline = ({ data, color, setToolTip }: TimelineProps) => {
+  return (
+    <StTimeline color={color}>
+      <div>
+        {data.map(({ year, items }) =>
+          renderTimelineItems({ year, items }, setToolTip)
+        )}
       </div>
     </StTimeline>
   );
 };
 
 export default Timeline;
-
-type ItemProps = {
-  year: string;
-  items: string[];
-};
