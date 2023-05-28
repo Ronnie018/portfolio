@@ -134,7 +134,7 @@ export const StContent = styled.div`
 
         button {
           font-size: 1.2rem;
-          padding: 0.9rem 1.4rem;
+          padding: 0.8rem 1.5rem;
           background-color: #1ab2d4;
           border-radius: 5px;
           cursor: pointer;
