@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StHero = styled.div`
+const StHero = styled.header`
   min-height: 100vh;
   background-color: grey;
   background-image: url(./images/bg_tech.png);
@@ -117,6 +117,9 @@ export const StContent = styled.div`
         }
       }
       .contact {
+        min-height: 50px;
+        display: flex;
+        align-items: end;
         @keyframes colorchange {
           from {
             color: #3a1b1b;
@@ -132,7 +135,8 @@ export const StContent = styled.div`
           }
         }
 
-        button {
+        .contact-btn {
+          color: black;
           font-size: 1.2rem;
           padding: 0.8rem 1.5rem;
           background-color: #1ab2d4;
@@ -188,7 +192,7 @@ export const StContent = styled.div`
           }
         }
         .contact {
-          button {
+          .contact-btn {
             font-size: 1.5rem;
             padding: 1.1rem 1.6rem;
           }
