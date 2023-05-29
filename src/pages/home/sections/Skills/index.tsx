@@ -23,6 +23,8 @@ const Skills = () => {
     'Laravel',
     'Linux',
     'Flask',
+    'Ruby',
+    'Rails',
   ];
   let running = false;
   useEffect(() => {

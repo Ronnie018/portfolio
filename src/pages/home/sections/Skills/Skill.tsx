@@ -69,6 +69,11 @@ const StSkill = styled.button`
 `;
 
 import {
+  SiTypescript,
+  SiRedux,
+  SiExpress,
+  DiRuby,
+  SiRubyonrails,
   FaHtml5,
   FaCss3Alt,
   FaJsSquare,
@@ -82,9 +87,7 @@ import {
   FaDatabase,
   FaFlask,
   FaPhp,
-} from 'react-icons/fa';
-
-import { SiTypescript, SiRedux, SiExpress } from 'react-icons/all';
+} from 'react-icons/all';
 
 const Skill = ({
   children,
@@ -112,6 +115,8 @@ const Skill = ({
     Laravel: FaLaravel,
     Linux: FaLinux,
     Flask: FaFlask,
+    Ruby: DiRuby,
+    Rails: SiRubyonrails,
   };
 
   const enumeratedText: any = {
