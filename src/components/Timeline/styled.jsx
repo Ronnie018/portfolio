@@ -27,8 +27,8 @@ const StTimeline = styled.div`
     }
 
     .timeline {
-      flex: 1 1;
-      width: 0.5px;
+      flex: 1 1 1px;
+      width: 1px;
       min-height: 100%;
       background-color: #ab8500;
       margin-left: 10px;
