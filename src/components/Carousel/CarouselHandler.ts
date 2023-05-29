@@ -5,7 +5,7 @@ interface iCarouselHandler {
   setCurrentIndex: Dispatch<SetStateAction<number>>;
   translateValue: number;
   setTranslateValue: Dispatch<SetStateAction<number>>;
-  setCentered: Dispatch<SetStateAction<string>>;
+  setCentered: Dispatch<SetStateAction<string | null>>;
   items: ItemProps[];
   correction: number;
   moveRate: number;
@@ -26,7 +26,7 @@ export default class CarouselHandler implements iCarouselHandler {
   setCurrentIndex: Dispatch<SetStateAction<number>>;
   translateValue: number;
   setTranslateValue: Dispatch<SetStateAction<number>>;
-  setCentered: Dispatch<SetStateAction<string>>;
+  setCentered: Dispatch<SetStateAction<string | null>>;
   items: ItemProps[];
   correction: number;
   moveRate: number;

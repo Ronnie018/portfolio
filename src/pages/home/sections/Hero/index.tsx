@@ -58,7 +58,7 @@ const Hero = () => {
                 </ul>
               </div>
               <div className='contact'>
-                <a href='#contact' className='contact-btn'>
+                <a href='#Contact' className='contact-btn'>
                   Contact
                 </a>
               </div>

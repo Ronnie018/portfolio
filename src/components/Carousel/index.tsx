@@ -10,7 +10,7 @@ import getImageBySize from '../../utils/getImageBySize';
 
 type CarouselProps = {
   items: ItemProps[];
-  setCentered: React.Dispatch<React.SetStateAction<string>>;
+  setCentered: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
 const Carousel = ({ items, setCentered }: CarouselProps) => {
@@ -59,7 +59,7 @@ export default Carousel;
 function renderItems(
   items: any,
   width: number,
-  setCentered: React.Dispatch<React.SetStateAction<string>>
+  setCentered: React.Dispatch<React.SetStateAction<string | null>>
 ) {
   if (!items) return null;
   return items.map(

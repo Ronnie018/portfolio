@@ -1,9 +1,9 @@
 import StProjects from './styled';
 import Carousel from '../../../../components/Carousel/index';
-import { useState } from 'react';
+import {  useState } from 'react';
 
 const Projects = () => {
-  const [centered, setCentered] = useState(null);
+  const [centered, setCentered] = useState<string | null>(null);
 
   const items = [
     {
