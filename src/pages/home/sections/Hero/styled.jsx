@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StHero = styled.header`
+const StHero = styled.div`
   min-height: 100vh;
   background-color: grey;
   background-image: url(./images/bg_tech.png);
@@ -30,7 +30,7 @@ const StHero = styled.header`
   }
 `;
 
-export const StContent = styled.div`
+export const StContent = styled.section`
   max-width: 100%;
   width: 1130px;
   margin: 0 auto;

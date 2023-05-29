@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StSkill = styled.div`
+const StSkill = styled.button`
   display: grid;
   background: #e1e1e1;
   box-shadow: 0px 22px 20px rgba(255, 255, 255, 0.1),
@@ -86,7 +86,15 @@ import {
 
 import { SiTypescript, SiRedux, SiExpress } from 'react-icons/all';
 
-const Skill = ({ children, color, setDescription }: { children: string; color: string; setDescription: any }) => {
+const Skill = ({
+  children,
+  color,
+  setDescription,
+}: {
+  children: string;
+  color: string;
+  setDescription: any;
+}) => {
   const enumeratedIcons: any = {
     HTML: FaHtml5,
     CSS: FaCss3Alt,
@@ -130,15 +138,17 @@ const Skill = ({ children, color, setDescription }: { children: string; color: s
   };
 
   const Icon = enumeratedIcons[children];
+  const description = enumeratedText[children];
   return (
     <StSkill
       color={color}
-      onPointerOver={() => {
-        setDescription(enumeratedText[children]);
-      }}
+      onPointerOver={() => setDescription(description)}
+      onFocus={() => setDescription(description)}
+      aria-roledescription='skill'
+      aria-label='skill'
     >
       <div className='content'>
-        <div className='icon'>
+        <div className='icon' title={description}>
           <Icon size={76} color={color} />
         </div>
         <div className='name'>{children}</div>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StBio = styled.div`
+const StBio = styled.section`
   height: max-content;
   background-image: url(/images/texture.png);
   padding: 5rem;
@@ -9,6 +9,12 @@ const StBio = styled.div`
     background-color: #989898;
     color: #000;
     font-family: 'Rubik', sans-serif;
+  }
+
+  .header {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
   }
 
   .container {

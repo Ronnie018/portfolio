@@ -20,14 +20,14 @@ const StTimeline = styled.div`
     height: 100%;
 
     .period {
-      flex: 1 1 1;
+      flex: 1 1;
       font-size: 1.8rem;
       padding: 15px 15px;
       font-weight: 200;
     }
 
     .timeline {
-      flex: 1 1 1;
+      flex: 1 1;
       width: 0.5px;
       min-height: 100%;
       background-color: #ab8500;
@@ -38,7 +38,7 @@ const StTimeline = styled.div`
       .item {
         position: relative;
         margin: 35px 0;
-        span {
+        li {
           margin-left: 56px;
           &:hover {
             color: #e1b000;

@@ -77,14 +77,22 @@ function renderItems(
           onPointerOver={() => setCentered(title)}
           href={url}
           target='_blank'
+          aria-roledescription={'go to ' + title}
         >
           <div className='img-wrapper' style={imageStyle} />
-          <span className='title'>{title}</span>
+          <h4 className='title'>{title}</h4>
           <div className='status'>
             {setStatus(done)}
             {setType(type)}
           </div>
-          <div className='tags'>{renderTags(tags)}</div>
+          <ul
+            className='tags'
+            aria-role='tags'
+            aria-details='list of technologies used in this project'
+            title='used technologies'
+          >
+            {renderTags(tags)}
+          </ul>
         </a>
       );
     }
@@ -98,16 +106,16 @@ function renderTags(tags: string[]) {
 
 function setStatus(done: boolean = false) {
   return done ? (
-    <img src='/images/svgs/open.svg' width={30} />
+    <img src='/images/svgs/open.svg' width={30} alt='project in development' />
   ) : (
-    <img src='/images/svgs/close.svg' width={30} />
+    <img src='/images/svgs/close.svg' width={30} alt='project is concluded' />
   );
 }
 
 function setType(type: string) {
   return type === 'repo' ? (
-    <img src='/images/svgs/repo.svg' width={30} />
+    <img src='/images/svgs/repo.svg' width={30} alt='repository link' />
   ) : (
-    <img src='/images/svgs/web.svg' width={30} />
+    <img src='/images/svgs/web.svg' width={30} alt='live website url' />
   );
 }

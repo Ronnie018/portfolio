@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StProjects = styled.div`
+const StProjects = styled.section`
   background-color: #000000;
   height: max-content;
   &,

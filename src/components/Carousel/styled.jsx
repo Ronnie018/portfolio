@@ -45,7 +45,7 @@ export const StCarousel = styled.section`
             background-repeat: no-repeat;
             transition: 1200ms cubic-bezier(0.175, 0.885, 0.3, 0.85);
           }
-          span.title {
+          h4.title {
             position: absolute;
             background-color: #ffffff;
             color: #323232;
@@ -65,7 +65,7 @@ export const StCarousel = styled.section`
             top: 1rem;
             left: 0;
             left: 1rem;
-            gap: .6rem;
+            gap: 0.6rem;
           }
           .tags {
             display: flex;
@@ -83,7 +83,7 @@ export const StCarousel = styled.section`
 
             justify-content: center;
 
-            span {
+            li {
               padding: 0.2rem 0.6rem;
               border-radius: 1rem;
               display: grid;

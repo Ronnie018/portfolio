@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StExperience = styled.div`
+const StExperience = styled.section`
   height: max-content;
   background-image: linear-gradient(
       180deg,

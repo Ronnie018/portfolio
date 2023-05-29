@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StContact = styled.div`
+const StContact = styled.section`
   background-color: #000000;
   min-height: 100vh;
   padding: 3rem;

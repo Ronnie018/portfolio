@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StSkills = styled.div`
+const StSkills = styled.section`
   height: max(70vh, 700px);
   background-color: #000000;
 
@@ -21,11 +21,10 @@ const StSkills = styled.div`
       overflow: hidden;
       align-items: center;
       background-color: #007792;
-      h1 {
+      h2 {
         margin-left: 6rem;
         font-size: 3rem;
         color: white;
-        font-size: 400;
       }
     }
     .skills-container {
@@ -78,7 +77,7 @@ const StSkills = styled.div`
   @media (max-width: 900px) {
     .container {
       .header {
-        h1 {
+        h2 {
           margin-left: 2rem;
         }
       }
@@ -88,7 +87,7 @@ const StSkills = styled.div`
     .container {
       .header {
         height: 100px;
-        h1 {
+        h2 {
           font-size: 1.8rem;
           margin-left: 1rem;
           line-height: 2.5rem;

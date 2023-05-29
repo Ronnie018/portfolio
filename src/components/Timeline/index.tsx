@@ -7,24 +7,31 @@ const renderTimelineItems = (
   setToolTip: Function
 ) => {
   return (
-    <div className='period-container' key={year}>
-      <div className='period'>{year}</div>
+    <article title='learning timeline' className='period-container' key={year}>
+      <header className='period'>
+        <h3>{year}</h3>
+      </header>
       <div className='timeline' />
       <div className='items'>
         {items.map((text, i) => {
           return (
-            <div className='item' key={year + '-' + i}>
-              <span
+            <ul
+              className='item'
+              key={year + '-' + i}
+              title={year + "'s timeline"}
+            >
+              <li
                 onMouseOver={() => setToolTip(year + ' - ' + text)}
                 onMouseOut={() => setToolTip(null)}
+                title={text}
               >
                 {partialFrom(text)}
-              </span>
-            </div>
+              </li>
+            </ul>
           );
         })}
       </div>
-    </div>
+    </article>
   );
 };
 

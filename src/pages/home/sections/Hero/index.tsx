@@ -36,7 +36,7 @@ const Hero = () => {
   return (
     <StHero>
       <Navbar />
-      <div className='content'>
+      <header className='content'>
         <StContent>
           <div className='left'>
             <div className='hello'>
@@ -68,7 +68,7 @@ const Hero = () => {
             <Avatar />
           </div>
         </StContent>
-      </div>
+      </header>
     </StHero>
   );
 };

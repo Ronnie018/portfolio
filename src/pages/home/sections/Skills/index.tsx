@@ -39,9 +39,9 @@ const Skills = () => {
   return (
     <StSkills width={width}>
       <div className='container' id='Skills'>
-        <div className='header'>
-          <h1>Skills i am proficient in:</h1>
-        </div>
+        <header className='header'>
+          <h2>Skills i am proficient in:</h2>
+        </header>
         <div className='skills-container'>
           <div className='skills' ref={skillsElm}>
             {skills.map((skill, index) => (

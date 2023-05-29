@@ -85,7 +85,7 @@ const dispatchColor = (name: string) => {
 
 const Tag = ({ children }: any) => {
   const { bg, color } = dispatchColor(children);
-  return <span style={{ backgroundColor: bg, color: color }}>{children}</span>;
+  return <li style={{ backgroundColor: bg, color: color }}>{children}</li>;
 };
 
 export default Tag;
