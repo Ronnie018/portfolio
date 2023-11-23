@@ -1,11 +1,20 @@
 import StProjects from './styled';
 import Carousel from '../../../../components/Carousel/index';
-import {  useState } from 'react';
+import { useState } from 'react';
 
 const Projects = () => {
   const [centered, setCentered] = useState<string | null>(null);
 
   const items = [
+    {
+      path: '/images/projects/',
+      filename: 'reentry.png',
+      title: 'Prisoner Reentry Advocates',
+      url: 'https://reentry-ronnie018.vercel.app/',
+      tags: ['Tailwind', 'Typescript'],
+      done: false,
+      type: 'web',
+    },
     {
       path: '/images/projects/',
       filename: 'together_player.png',

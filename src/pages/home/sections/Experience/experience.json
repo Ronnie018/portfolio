@@ -35,20 +35,18 @@
       "items": [
         "Ruby and Ruby-On-Rails",
         "Jest GraphCMS GraphQL",
-        "Tailwind, React update and Next.js",
-        "Angular"
+        "Tailwind and Next.js"
       ]
     }
   ],
 
   "certifications": [
     "FullStack Web Development",
-    "Blockchain",
     "DevOps and Agile Culture",
     "Design Thinking",
-    "Leadership and Communication",
     "User Experience",
     "Python for Data Analisis",
-    "Cybersecurity"
+    "Cybersecurity",
+    "AWS Cloud Certified"
   ]
 }
