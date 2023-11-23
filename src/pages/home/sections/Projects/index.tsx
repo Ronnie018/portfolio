@@ -26,15 +26,6 @@ const Projects = () => {
     },
     {
       path: '/images/projects/',
-      filename: 'ror_blog.png',
-      title: 'Ruby Fullstack Blog App',
-      url: 'https://github.com/Ronnie018/ROR-mvc-getting-started',
-      tags: ['MySQL', 'Bootstrap', 'Ruby on Rails'],
-      done: true,
-      type: 'repo',
-    },
-    {
-      path: '/images/projects/',
       filename: 'nlw_spacetime.png',
       title: 'NLW Spacetime',
       url: 'https://github.com/Ronnie018/NLW-spacetime-webClient',
@@ -68,6 +59,15 @@ const Projects = () => {
       tags: ['Next', 'Tailwind', 'Javascript'],
       done: false,
       type: 'web',
+    },
+    {
+      path: '/images/projects/',
+      filename: 'ror_blog.png',
+      title: 'Ruby Fullstack Blog App',
+      url: 'https://github.com/Ronnie018/ROR-mvc-getting-started',
+      tags: ['MySQL', 'Bootstrap', 'Ruby on Rails'],
+      done: true,
+      type: 'repo',
     },
   ];
 
